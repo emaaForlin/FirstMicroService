@@ -15,7 +15,7 @@ func main() {
 
 	sm := http.NewServeMux()
 	sm.Handle("/", ph)
-
+	
 	s := &http.Server{
 		Addr: ":9090",
 		Handler: sm,
@@ -23,10 +23,11 @@ func main() {
 		ReadTimeout: 1 * time.Second,
 		WriteTimeout: 1 * time.Second,
 	}
+	l.Printf("Server listening on %s", s.Addr)
+
 
 	go func() {
 		err := s.ListenAndServe()
-		l.Printf("Server listening on %s", s.Addr)
 		if err != nil {
 			l.Fatal(err)
 		}
