@@ -1,0 +1,6 @@
+{
+    "go.installDependenciesWhenBuilding": true,
+    "go.languageServerExperimentalFeatures": {
+        "diagnostics": false
+    }
+}
